@@ -20,6 +20,10 @@
     display: flex;
 }
 
+.canvas-grids {
+    display: grid;
+}
+
 .grid {
     width: 10px;
     height: 10px;

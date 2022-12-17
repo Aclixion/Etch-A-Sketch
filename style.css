@@ -8,8 +8,16 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Gill Sans', sans-serif;
+}
+
 h1 {
     margin-bottom: 10px;
+}
+
+button {
+    font-family: inherit;
 }
 
 .change-dimensions-btn {

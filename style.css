@@ -30,6 +30,11 @@ button {
     background: linear-gradient(90deg, #3e3e3e 0%, #848484 100%);
 }
 
+.change-dimensions-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg, #848484 0%, #3e3e3e 100%);
+}
+
 .container {
     position: absolute;
     left: 50%;

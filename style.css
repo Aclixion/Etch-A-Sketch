@@ -8,6 +8,14 @@
     box-sizing: border-box;
 }
 
+h1 {
+    margin-bottom: 10px;
+}
+
+.change-dimensions-btn {
+    margin-bottom: 20px;
+}
+
 .container {
     position: absolute;
     left: 50%;

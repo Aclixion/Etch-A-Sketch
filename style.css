@@ -22,10 +22,6 @@
 
 .canvas-grids {
     display: grid;
-}
-
-.grid {
-    width: 10px;
-    height: 10px;
-    background-color: pink;
+    width: 500px;
+    height: 500px;
 }

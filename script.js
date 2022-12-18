@@ -27,3 +27,8 @@ function changeGridTemplates(dimension) {
     canvasGrids.style["grid-template-columns"] = `repeat(${dimension}, auto)`;
     canvasGrids.style["grid-template-rows"] = `repeat(${dimension}, auto)`;
 }
+
+// Determines whether or not a dimension is within a valid range
+function isValidDimension(dimension) {
+    return 1 <= dimension <= MAX_DIMENSION;
+}

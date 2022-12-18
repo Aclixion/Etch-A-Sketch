@@ -7,6 +7,8 @@ const colorSelector = document.querySelector(".color-selector"); // Color select
 
 // Adds grids to the canvas
 function generateGrids(dimension) {
+    changeGridTemplates(dimension);
+
     for (let i = 0; i < dimension; i++) {
         for (let j = 0; j < dimension; j++) {
             let grid = document.createElement("div");
@@ -14,4 +16,10 @@ function generateGrids(dimension) {
             canvasGrids.appendChild(grid);
         }
     }
+}
+
+// Changes grid templates based on dimension. This function will make it so that every grid will be a square.
+function changeGridTemplates(dimension) {
+    canvasGrids.style["grid-template-columns"] = `repeat(${dimension}, auto)`;
+    canvasGrids.style["grid-template-rows"] = `repeat(${dimension}, auto)`;
 }

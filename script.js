@@ -37,6 +37,9 @@ changeDimensionsButton.addEventListener("click", () => {
     let dimension;
     do {
         dimension = prompt("Enter new dimensions");
-    } while (!isValidDimension(dimension))
-    generateGrids(dimension);
+    } while (dimension && !isValidDimension(dimension))
+    
+    if (dimension) {
+        generateGrids(dimension);
+    }
 });

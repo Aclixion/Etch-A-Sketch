@@ -30,5 +30,13 @@ function changeGridTemplates(dimension) {
 
 // Determines whether or not a dimension is within a valid range
 function isValidDimension(dimension) {
-    return 1 <= dimension <= MAX_DIMENSION;
+    return dimension <= MAX_DIMENSION && dimension >= 1;
 }
+
+changeDimensionsButton.addEventListener("click", () => {
+    let dimension;
+    do {
+        dimension = prompt("Enter new dimensions");
+    } while (!isValidDimension(dimension))
+    generateGrids(dimension);
+});

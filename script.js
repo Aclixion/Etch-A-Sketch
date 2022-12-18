@@ -5,6 +5,8 @@ const changeDimensionsButton = document.querySelector(".change-dimensions-btn");
 const canvasGrids = document.querySelector(".canvas-grids"); // Div that contains grids
 const colorSelector = document.querySelector(".color-selector"); // Color selector
 
+const MAX_DIMENSION = 100; // Largest possible dimension for canvas
+
 // Adds grids to the canvas
 function generateGrids(dimension) {
     changeGridTemplates(dimension);

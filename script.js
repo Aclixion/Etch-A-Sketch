@@ -44,7 +44,7 @@ function changeColor(event) {
     event.target.style["background-color"] = colorSelector.value;
 }
 
-changeDimensionsButton.addEventListener("click", () => {
+function promptUserForDimension() {
     let dimension;
     do {
         dimension = prompt("Enter new dimensions");
@@ -53,5 +53,7 @@ changeDimensionsButton.addEventListener("click", () => {
     if (dimension) {
         generateGrids(dimension);
     }
-});
+}
+
+changeDimensionsButton.addEventListener("click", promptUserForDimension);
 

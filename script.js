@@ -7,6 +7,8 @@ const colorSelector = document.querySelector(".color-selector"); // Color select
 
 const MAX_DIMENSION = 100; // Largest possible dimension for canvas
 
+let mouseIsDown = false; // Whether or not the user is holding the mouse/trackpad button
+
 // Adds grids to the canvas
 function generateGrids(dimension) {
     canvasGrids.innerHTML = "";
@@ -38,7 +40,7 @@ changeDimensionsButton.addEventListener("click", () => {
     do {
         dimension = prompt("Enter new dimensions");
     } while (dimension && !isValidDimension(dimension))
-    
+
     if (dimension) {
         generateGrids(dimension);
     }

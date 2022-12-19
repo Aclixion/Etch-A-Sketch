@@ -7,19 +7,6 @@ const colorSelector = document.querySelector(".color-selector"); // Color select
 
 const MAX_DIMENSION = 100; // Largest possible dimension for canvas
 
-// Adds grids to the canvas
-function generateGrids(dimension) {
-    canvasGrids.innerHTML = "";
-
-    changeGridTemplates(dimension);
-
-    for (let i = 0; i < dimension; i++) {
-        for (let j = 0; j < dimension; j++) {
-            addGrid();
-        }
-    }
-}
-
 // Adds a grid to canvas
 function addGrid() {
     let grid = document.createElement("div");
@@ -32,6 +19,19 @@ function addGrid() {
 function changeGridTemplates(dimension) {
     canvasGrids.style["grid-template-columns"] = `repeat(${dimension}, auto)`;
     canvasGrids.style["grid-template-rows"] = `repeat(${dimension}, auto)`;
+}
+
+// Adds grids to the canvas
+function generateGrids(dimension) {
+    canvasGrids.innerHTML = "";
+
+    changeGridTemplates(dimension);
+
+    for (let i = 0; i < dimension; i++) {
+        for (let j = 0; j < dimension; j++) {
+            addGrid();
+        }
+    }
 }
 
 // Determines whether or not a dimension is within a valid range

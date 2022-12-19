@@ -17,6 +17,9 @@ function generateGrids(dimension) {
         for (let j = 0; j < dimension; j++) {
             let grid = document.createElement("div");
             grid.classList.add("grid");
+            grid.addEventListener("mouseover", (e) => {
+                e.target.style["background-color"] = colorSelector.value;
+            });
             canvasGrids.appendChild(grid);
         }
     }

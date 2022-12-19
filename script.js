@@ -15,12 +15,17 @@ function generateGrids(dimension) {
 
     for (let i = 0; i < dimension; i++) {
         for (let j = 0; j < dimension; j++) {
-            let grid = document.createElement("div");
-            grid.classList.add("grid");
-            grid.addEventListener("mouseover", changeColor);
-            canvasGrids.appendChild(grid);
+            addGrid();
         }
     }
+}
+
+// Adds a grid to canvas
+function addGrid() {
+    let grid = document.createElement("div");
+    grid.classList.add("grid");
+    grid.addEventListener("mouseover", changeColor);
+    canvasGrids.appendChild(grid);
 }
 
 // Changes grid templates based on dimension. This function will make it so that every grid will be a square.

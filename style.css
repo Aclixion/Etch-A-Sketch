@@ -21,7 +21,7 @@ button {
     font-family: inherit;
 }
 
-.change-dimensions-btn {
+.change-side-length-btn {
     margin-bottom: 20px;
     padding: 10px 20px;
     font-size: 20px;
@@ -30,7 +30,7 @@ button {
     background: linear-gradient(90deg, #3e3e3e 0%, #848484 100%);
 }
 
-.change-dimensions-btn:hover {
+.change-side-length-btn:hover {
     cursor: pointer;
     background: linear-gradient(90deg, #848484 0%, #3e3e3e 100%);
 }
@@ -58,9 +58,4 @@ button {
     width: 500px;
     height: 500px;
     border: 3px solid #bababa;
-}
-
-.grid {
-    background-color: red;
-    border: 1px solid black;
 }

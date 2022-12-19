@@ -1,11 +1,11 @@
 /*
     HTML elements
 */
-const changeDimensionsButton = document.querySelector(".change-dimensions-btn"); // Button to change canvas dimensions
+const changeSideLengthButton = document.querySelector(".change-side-length-btn"); // Button to change canvas side length
 const canvasGrids = document.querySelector(".canvas-grids"); // Div that contains grids
 const colorSelector = document.querySelector(".color-selector"); // Color selector
 
-const MAX_DIMENSION = 100; // Largest possible dimension for canvas
+const MAX_SIDE_LENGTH = 100; // Largest possible side length for canvas
 
 // Adds a grid to canvas
 function addGrid() {
@@ -15,28 +15,28 @@ function addGrid() {
     canvasGrids.appendChild(grid);
 }
 
-// Changes grid templates based on dimension. This function will make it so that every grid will be a square.
-function changeGridTemplates(dimension) {
-    canvasGrids.style["grid-template-columns"] = `repeat(${dimension}, auto)`;
-    canvasGrids.style["grid-template-rows"] = `repeat(${dimension}, auto)`;
+// Changes grid templates based on side length
+function changeGridTemplates(sideLength) {
+    canvasGrids.style["grid-template-columns"] = `repeat(${sideLength}, auto)`;
+    canvasGrids.style["grid-template-rows"] = `repeat(${sideLength}, auto)`;
 }
 
 // Adds grids to the canvas
-function generateGrids(dimension) {
+function generateGrids(sideLength) {
     canvasGrids.innerHTML = "";
 
-    changeGridTemplates(dimension);
+    changeGridTemplates(sideLength);
 
-    for (let i = 0; i < dimension; i++) {
-        for (let j = 0; j < dimension; j++) {
+    for (let i = 0; i < sideLength; i++) {
+        for (let j = 0; j < sideLength; j++) {
             addGrid();
         }
     }
 }
 
-// Determines whether or not a dimension is within a valid range
-function isValidDimension(dimension) {
-    return dimension <= MAX_DIMENSION && dimension >= 1;
+// Determines whether or not a side length is within a valid range
+function isValidSideLength(sideLength) {
+    return sideLength <= MAX_SIDE_LENGTH && sideLength >= 1;
 }
 
 // Change color of grid
@@ -44,16 +44,16 @@ function changeColor(event) {
     event.target.style["background-color"] = colorSelector.value;
 }
 
-// Sends a prompt to the user to enter a dimension
-function promptUserForDimension() {
-    let dimension;
+// Sends a prompt to the user to enter a side length
+function promptUserForSideLength() {
+    let sideLength;
     do {
-        dimension = prompt("Enter new dimensions");
-    } while (dimension && !isValidDimension(dimension))
+        sideLength = prompt("Enter new side length");
+    } while (sideLength && !isValidSideLength(sideLength))
 
-    if (dimension) {
-        generateGrids(dimension);
+    if (sideLength) {
+        generateGrids(sideLength);
     }
 }
 
-changeDimensionsButton.addEventListener("click", promptUserForDimension);
+changeSideLengthButton.addEventListener("click", promptUserForSideLength);

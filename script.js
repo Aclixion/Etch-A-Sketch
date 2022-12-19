@@ -17,9 +17,7 @@ function generateGrids(dimension) {
         for (let j = 0; j < dimension; j++) {
             let grid = document.createElement("div");
             grid.classList.add("grid");
-            grid.addEventListener("mouseover", (e) => {
-                e.target.style["background-color"] = colorSelector.value;
-            });
+            grid.addEventListener("mouseover", changeColor);
             canvasGrids.appendChild(grid);
         }
     }
@@ -34,6 +32,11 @@ function changeGridTemplates(dimension) {
 // Determines whether or not a dimension is within a valid range
 function isValidDimension(dimension) {
     return dimension <= MAX_DIMENSION && dimension >= 1;
+}
+
+// Change color of grid
+function changeColor(event) {
+    event.target.style["background-color"] = colorSelector.value;
 }
 
 changeDimensionsButton.addEventListener("click", () => {

@@ -1,6 +1,3 @@
-/*
-    HTML elements
-*/
 const changeSideLengthButton = document.querySelector(".change-side-length-btn"); // Button to change canvas side length
 const canvasGrids = document.querySelector(".canvas-grids"); // Div that contains grids
 const colorSelector = document.querySelector(".color-selector"); // Color selector
@@ -23,10 +20,11 @@ function changeGridTemplates(sideLength) {
 
 // Adds grids to the canvas
 function generateGrids(sideLength) {
+    // Removes existing grids
     canvasGrids.innerHTML = "";
-
+    // Change grid template styles so that all grids are squares
     changeGridTemplates(sideLength);
-
+    // Adds grids
     for (let i = 0; i < sideLength; i++) {
         for (let j = 0; j < sideLength; j++) {
             addGrid();
@@ -44,16 +42,18 @@ function changeColor(event) {
     event.target.style["background-color"] = colorSelector.value;
 }
 
-// Sends a prompt to the user to enter a side length
+// Prompts user for new side length of canvas
 function promptUserForSideLength() {
     let sideLength;
+    // Continue prompting user for side length until valid or user exits prompt
     do {
         sideLength = prompt("Enter new side length");
     } while (sideLength && !isValidSideLength(sideLength))
-
+    // If user didn't exit prompt, generate grids
     if (sideLength) {
         generateGrids(sideLength);
     }
 }
 
+// Change side lengths button will prompt user for side length when clicked
 changeSideLengthButton.addEventListener("click", promptUserForSideLength);

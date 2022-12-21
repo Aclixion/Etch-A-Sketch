@@ -3,9 +3,9 @@ RESET STYLES
 */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /*
@@ -16,8 +16,8 @@ body {
 }
 
 h1 {
-    margin-bottom: 10px;
     font-size: 50px;
+    margin-bottom: 10px;
 }
 
 button {
@@ -27,32 +27,32 @@ button {
 /*
 CLASS SELECTORS
 */
+.container {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .change-side-length-btn {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    font-size: 20px;
+    background: linear-gradient(90deg, #3e3e3e 0%, #848484 100%);
     border: none;
     color: white;
-    background: linear-gradient(90deg, #3e3e3e 0%, #848484 100%);
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
 }
 
 .change-side-length-btn:hover {
-    cursor: pointer;
     background: linear-gradient(90deg, #848484 0%, #3e3e3e 100%);
+    cursor: pointer;
 }
 
 .color-selector {
-    width: 50px;
-    height: 50px;
     border: none;
-}
-
-.container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    height: 50px;
+    width: 50px;
 }
 
 .canvas {
@@ -60,8 +60,8 @@ CLASS SELECTORS
 }
 
 .canvas-grids {
-    display: grid;
-    width: 500px;
-    height: 500px;
     border: 3px solid #bababa;
+    display: grid;
+    height: 500px;
+    width: 500px;
 }

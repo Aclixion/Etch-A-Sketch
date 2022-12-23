@@ -3,6 +3,7 @@ const canvasGrids = document.querySelector(".canvas-grids"); // Div that contain
 const colorSelector = document.querySelector(".color-selector"); // Color selector
 
 const MAX_SIDE_LENGTH = 100; // Largest possible side length for canvas
+const DEFAULT_SIDE_LENGTH = 25; // Default side length of canvas
 
 // Adds a grid to canvas
 function addGrid() {
@@ -55,5 +56,12 @@ function promptUserForSideLength() {
     }
 }
 
+// Generates canvas with default side length
+function initializeCanvas() {
+    generateGrids(DEFAULT_SIDE_LENGTH);
+}
+
 // Change side lengths button will prompt user for side length when clicked
 changeSideLengthButton.addEventListener("click", promptUserForSideLength);
+
+initializeCanvas();
